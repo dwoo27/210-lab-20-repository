@@ -12,17 +12,17 @@ public:
 	// constructors
 	Chair() {
 		prices = new double[SIZE];
-		legs = 0;
+		legs = (rand() % 2) + 3;
 		for (int i = 0; i < SIZE; i++) {
 			double price = (rand() % (MAX - MIN+1) + MIN) / (double)100;
 			prices[i] = price;
 		}
 	}
 	Chair(int l, double p[]) {
-		prices = p;
+		prices = new double[SIZE];
 		legs = l;
 		for (int i = 0; i < SIZE; i++)
-			prices[i] = 0;
+			prices[i] = p[i];
 	}
 	// setters and getters
 	void setLegs(int l) { legs = l; }
