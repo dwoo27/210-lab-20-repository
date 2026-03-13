@@ -14,12 +14,12 @@ public:
 		prices = new double[SIZE];
 		legs = 0;
 		for (int i = 0; i < SIZE; i++) {
-			double price = (rand() % (MAX - MIN) + 1) / (double)100;
+			double price = (rand() % (MAX - MIN+1) + MIN) / (double)100;
 			prices[i] = price;
 		}
 	}
 	Chair(int l, double p[]) {
-		prices = new double[SIZE];
+		prices = p;
 		legs = l;
 		for (int i = 0; i < SIZE; i++)
 			prices[i] = 0;
