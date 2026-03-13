@@ -2,6 +2,8 @@
 #include <iomanip>
 using namespace std;
 const int SIZE = 3;
+const int MIN = 10000;
+const int MAX = 99999;
 class Chair {
 private:
 	int legs;
@@ -11,8 +13,10 @@ public:
 	Chair() {
 		prices = new double[SIZE];
 		legs = 0;
-		for (int i = 0; i < SIZE; i++)
-			prices[i] = 0;
+		for (int i = 0; i < SIZE; i++) {
+			double price = (rand() % (MAX - MIN) + 1) / (double)100;
+			prices[i] = price;
+		}
 	}
 	Chair(int l) {
 		prices = new double[SIZE];
